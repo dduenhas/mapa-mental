@@ -2,7 +2,7 @@
 
 Ferramenta web gratuita para **organizar pesquisas escolares** por meio de mapas mentais interativos. Desenvolvida para apoiar o **Ensino Fundamental I** (1º ao 5º ano), com foco em competências da **BNCC** e da **BNCC de Computação (BNCC Tecnologia)**.
 
-**Acesse online:** após o deploy, o link ficará disponível em `https://mapa-mental.<sua-conta>.workers.dev`
+**Acesse online:** [https://mapa-mental.educar.workers.dev](https://mapa-mental.educar.workers.dev)
 
 ---
 
