@@ -1,0 +1,13 @@
+{
+  "name": "mapa-mental",
+  "version": "1.0.0",
+  "description": "Mapa Mental Educativo - Ferramenta de pesquisa para ensino fundamental",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

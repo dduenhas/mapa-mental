@@ -1,0 +1,12 @@
+name = "mapa-mental"
+main = "src/index.js"
+compatibility_date = "2025-06-18"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+[[kv_namespaces]]
+binding = "MINDMAPS"
+id = "9d0a7b04d2db4f7a88f1ba321c9ce576"

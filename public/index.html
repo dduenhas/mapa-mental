@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="description" content="Mapa Mental Educativo — ferramenta digital para organizar pesquisas escolares alinhada à BNCC, ideal para o Ensino Fundamental I.">
+<title>Mapa Mental Educativo</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header id="header">
+  <div class="header-brand">
+    <h1 id="appTitle">Mapa Mental</h1>
+    <p class="header-subtitle">Organize suas ideias de pesquisa</p>
+  </div>
+  <button id="mapTitle" type="button" title="Clique para renomear a pesquisa" aria-label="Título da pesquisa: Nova Pesquisa">Nova Pesquisa</button>
+  <span id="status" role="status" aria-live="polite"></span>
+  <nav id="toolbar" aria-label="Ferramentas do mapa mental">
+    <button id="btnHelp" type="button" title="Como usar">Ajuda</button>
+    <button id="btnNew" type="button" title="Novo mapa">Novo</button>
+    <button id="btnSave" type="button" title="Salvar na nuvem">Salvar</button>
+    <button id="btnDownload" type="button" title="Baixar arquivo">Baixar</button>
+    <button id="btnUpload" type="button" title="Carregar arquivo">Abrir</button>
+  </nav>
+</header>
+
+<main id="canvasWrapper" aria-label="Área de edição do mapa mental">
+  <div id="canvas">
+    <svg id="svgLayer" aria-hidden="true"></svg>
+    <div id="nodesLayer"></div>
+  </div>
+  <div class="zoom-controls" aria-label="Controles de zoom">
+    <button id="zoomIn" type="button" title="Aproximar" aria-label="Aproximar">+</button>
+    <button id="zoomOut" type="button" title="Afastar" aria-label="Afastar">−</button>
+    <button id="zoomReset" type="button" title="Centralizar" aria-label="Centralizar mapa">&#x2316;</button>
+  </div>
+</main>
+
+<section id="shareSection" aria-label="Compartilhar mapa">
+  <label for="shareUrl" class="visually-hidden">Link para compartilhar</label>
+  <input id="shareUrl" type="text" readonly placeholder="Salve o mapa para gerar o link...">
+  <button id="btnCopyLink" type="button" title="Copiar link">Copiar Link</button>
+</section>
+
+<div id="editModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+  <div class="modal-box">
+    <h2 id="editModalTitle">Editar Tópico</h2>
+    <label for="editInput" class="visually-hidden">Texto do tópico</label>
+    <input id="editInput" type="text" maxlength="120" placeholder="Digite o texto do tópico...">
+    <div class="modal-btns">
+      <button id="editSave" type="button">Salvar</button>
+      <button id="editCancel" type="button">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="titleModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="titleModalTitle">
+  <div class="modal-box">
+    <h2 id="titleModalTitle">Nome da Pesquisa</h2>
+    <label for="titleInput" class="visually-hidden">Título da pesquisa</label>
+    <input id="titleInput" type="text" maxlength="80" placeholder="Ex.: Animais da floresta amazônica">
+    <div class="modal-btns">
+      <button id="titleSave" type="button">Salvar</button>
+      <button id="titleCancel" type="button">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div id="helpModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="helpModalTitle">
+  <div class="modal-box modal-box-wide">
+    <h2 id="helpModalTitle">Como usar o Mapa Mental</h2>
+    <div class="help-content">
+      <section>
+        <h3>Passo a passo</h3>
+        <ol>
+          <li>Clique no tópico central e dê um <strong>duplo clique</strong> para escrever o tema da pesquisa.</li>
+          <li>Use o botão <strong>+</strong> em cada tópico para adicionar ideias relacionadas.</li>
+          <li>Arraste os tópicos para organizar o mapa da forma que fizer mais sentido.</li>
+          <li>Clique em <strong>Salvar</strong> para guardar na nuvem e gerar um link para compartilhar.</li>
+        </ol>
+      </section>
+      <section>
+        <h3>Dicas para pesquisa</h3>
+        <ul>
+          <li>Coloque perguntas nos ramos: <em>O que é?</em>, <em>Onde vive?</em>, <em>Por quê?</em></li>
+          <li>Use cores diferentes para separar categorias (lugares, datas, curiosidades).</li>
+          <li>Comece pelo que você já sabe e vá expandindo com novas descobertas.</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Atalhos</h3>
+        <ul class="shortcuts">
+          <li><kbd>Duplo clique</kbd> — editar tópico</li>
+          <li><kbd>Scroll</kbd> — zoom</li>
+          <li><kbd>Arrastar fundo</kbd> — mover o mapa</li>
+        </ul>
+      </section>
+    </div>
+    <div class="modal-btns">
+      <button id="helpClose" type="button">Entendi!</button>
+    </div>
+  </div>
+</div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>
